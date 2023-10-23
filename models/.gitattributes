@@ -1,0 +1,4 @@
+augmented.pth filter=lfs diff=lfs merge=lfs -text
+barebone.pth filter=lfs diff=lfs merge=lfs -text
+pretrained_barebone filter=lfs diff=lfs merge=lfs -text
+pretrained_augmented filter=lfs diff=lfs merge=lfs -text
