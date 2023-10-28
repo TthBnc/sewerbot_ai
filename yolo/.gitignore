@@ -1,2 +1,3 @@
 /ultralytics
-/own/datasets/coco128
+/testing/datasets/coco128
+/src/*/pictures
