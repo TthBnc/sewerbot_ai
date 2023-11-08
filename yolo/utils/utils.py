@@ -1,10 +1,12 @@
 import cv2
 import os
 
-def slice_video(frame_interval=1, path=os.getcwd(), write_path='10.27'):
+def slice_video(frame_interval=1, path=os.getcwd(), write_path='10.27', crop="None"):
     data_path = os.path.join(path, "..", "src", write_path)
     videos_path = os.path.join(data_path, "videos")
     pictures_path = os.path.join(data_path, "pictures")
+
+    width, _ = 640, 480
 
     if not os.path.exists(pictures_path):
         os.makedirs(pictures_path)
@@ -33,7 +35,11 @@ def slice_video(frame_interval=1, path=os.getcwd(), write_path='10.27'):
                 if frame is None:
                     print(f'frame is None')
                 else:
+                    _, original_width = frame.shape[:2]
                     cropped_frame = frame[128:]  # removes the top 128 pixels
+                    if crop == "drum": cropped_frame = cropped_frame[:, :original_width - width, :]
+                    if crop == "head": cropped_frame = cropped_frame[:, original_width - width:, :]
+
                     cv2.imwrite(file_path, cropped_frame)
 
         video.release()       
