@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['white-dots']
+
+roboflow:
+  workspace: bence-tth
+  project: red-light-drum
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/bence-tth/red-light-drum/dataset/1

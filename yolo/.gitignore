@@ -1,3 +1,5 @@
 /yolo/ultralytics
 /testing/datasets/coco128
 /src/*/pictures
+*/src/*/pictures*
+*/src/*/filtered*
